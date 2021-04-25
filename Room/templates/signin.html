@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Home Rent System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<style>
+    input[type=text][type=password]{
+    border-radius:8px;
+    width:600px;
+    height:16px;
+    }
+    #bg{
+    background-size: 1800px 900px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: fixed;
+}
+</style>
+    {% if error %}
+    <script>alert('Logged in Sucessfully');
+window.location='{% url 'home' %}';
+</script>
+    {% endif %}
+
+</head>
+<body id="bg" style="background-image: url('{% static 'images/jokes5.jpg' %}')";>
+<nav class="navbar navbar-inverse" style="padding:0px;margin:0px">
+  <div class="container-fluid" style="padding:0px;margin:0px">
+    <div class="navbar-header" style="margin-bottom:4px">
+      <a class="navbar-brand" href="#"><span style="font-size:40px;color:Red"><i style="font-family:cursive">S</i></span><span style="font-size:20px;color:white">earching</span><span style="font-size:45px;color:Red"><i style="font-family:cursive">y</i></span><span style="font-size:20px;color:white">our</span><span style="font-size:30px;color:Red"><i style="font-family:cursive">H</i></span><span style="font-size:20px;color:white">ome</span></a>
+    </div>
+
+
+  </div></nav>
+<div style="color:Black;border:1px solid white;border-radius:8px;background-color:#99DBF9;padding:50px">
+
+        <h3><strong>Login your account</strong></h3><hr>
+    <form method="post" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+
+User Name:<br><input type="text" placeholder="Enter user name" name="uname" style="border-radius:8px;width:600px;height:35px;"><br><br>
+        Password:<br><input type="password" placeholder="Enter password" name="pwd" style="border-radius:8px;width:600px;height:35px;"><br><br>
+
+        <input type="submit" value="Sign in" style="color:white;border-radius:8px;width:100px;height:35px;background-color:#333;border:1px solid black">
+    </form>
+
+    </div>
+</body>
+</html>
